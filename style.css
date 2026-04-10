@@ -1,0 +1,121 @@
+/* DESIGN TOKENS: Centralized variables */
+:root {
+    --bg-bright: #ffffff;
+    --bg-dull: #f9fafb;
+    --text-heading: #111827;
+    --text-body: #374151;
+    --link-color: #4f46e5;
+    --section-pad-desktop: 100px;
+    --section-pad-mobile: 60px;
+}
+
+/* RESET: Removing browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dull);
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+/* LAYOUT: Centering container */
+.center-container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+}
+
+/* HEADER: Full-width "Stretched" look */
+.faq-header-stretch {
+    width: 100%;
+    background-color: var(--bg-bright);
+    padding: var(--section-pad-desktop) 0 60px 0;
+    text-align: center;
+}
+
+.faq-header-stretch h1 {
+    font-size: 2.5rem;
+    color: var(--text-heading);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+/* FAQ ITEMS */
+.faq-section {
+    padding-top: 40px;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-bottom: 20px;
+}
+
+/* LINKS & ACCESSIBILITY */
+.inline-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+}
+
+/* High-visibility focus for keyboard navigation */
+.inline-link:focus, .author-info a:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* DIVIDER */
+.section-divider {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 60px 0;
+}
+
+/* LISTS */
+ol, .bullet-list {
+    margin-left: 20px;
+    margin-bottom: 24px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+/* FOOTER */
+.author-info {
+    text-align: center;
+    padding: 80px 0 40px 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* ACCESSIBILITY UTILITY */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 640px) {
+    .faq-header-stretch { padding: var(--section-pad-mobile) 0 40px 0; }
+    .faq-header-stretch h1 { font-size: 1.85rem; }
+    .faq-item h3 { font-size: 1.25rem; }
+}
